@@ -1,0 +1,13 @@
+version: '2'
+services:
+  app:
+    build: .
+    mem_limit: 3000m
+    ports:
+      - "8081:8081"
+    depends_on:
+    volumes:
+    environment:
+      - DATABASE_HOST=db-cp-player
+    container_name: cp-player-app
+    command: ["npm", "start"]
